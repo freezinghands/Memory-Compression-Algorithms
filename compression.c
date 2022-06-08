@@ -81,7 +81,7 @@ MemoryChunk copy_memory_chunk(MemoryChunk target) {
     memcpy(chunk.body, target.body, chunk.size);
     return chunk;
 }
-
+/*
 void remove_memory_chunk(MemoryChunk chunk) {
     free(chunk.body);
 }
@@ -94,7 +94,7 @@ void remove_compression_result(CompressionResult result) {
 void remove_decompression_result(DecompressionResult result) {
     remove_memory_chunk(result.original);
 }
-
+*/
 void print_memory_chunk(MemoryChunk chunk) {
     if (chunk.size % 4 != 0) {
         for (int i = 0; i < 4 - (chunk.size % 4); i++) {
@@ -171,7 +171,7 @@ void print_decompression_result(DecompressionResult result) {
 MemoryChunk file2memorychunk(char *filename, int offset, int size) {
 #ifdef VERBOSE
     printf("reading file \'%s\'...\n", filename);
-    printf("offset: %d  size: $d\n", offset, size);
+    printf("offset: %d  size: %d\n", offset, size);
 #endif
 
     FILE *fp = fopen(filename, "rb");
@@ -472,7 +472,7 @@ CacheLine bdi_compressing_unit(CacheLine original, int encoding) {
 #ifdef VERBOSE
             printf("iteration terminated (not compressible)\n");
 #endif
-            remove_memory_chunk(result);
+            //remove_memory_chunk(result);
             result = copy_memory_chunk(original);
             return result;
         } else {

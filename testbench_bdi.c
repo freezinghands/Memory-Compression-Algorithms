@@ -16,9 +16,9 @@ int main(int argc, char const *argv[]) {
     print_decompression_result(dec_result);
     printf("\n");
 
-    remove_decompression_result(dec_result);
-    remove_compression_result(result);
-    remove_memory_chunk(original);
+    //remove_decompression_result(dec_result);
+    //remove_compression_result(result);
+    //remove_memory_chunk(original);
 
     return 0;
 }

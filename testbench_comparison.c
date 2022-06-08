@@ -1,3 +1,4 @@
+#define VERBOSE
 #include "compression.h"
 
 int main(int argc, char const *argv[]) {
@@ -18,9 +19,9 @@ int main(int argc, char const *argv[]) {
     print_memory_chunk(fpc_result.compressed);
     printf("\n====================\n");
 
-    remove_memory_chunk(original);
-    remove_compression_result(bdi_result);
-    remove_compression_result(fpc_result);
+    //remove_memory_chunk(original);
+    //remove_compression_result(bdi_result);
+    //remove_compression_result(fpc_result);
 
     return 0;
 }
